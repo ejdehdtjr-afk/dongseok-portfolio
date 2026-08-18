@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="포트폴리오 제출 전 브라우저·해상도·상호작용 검증 페이지" />
+    <title>제출 전 검증 | 정동석 포트폴리오</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="사이트 머리말">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">●</span> 정동석 포트폴리오</a>
+      <p class="privacy-note">로컬에서도 실행되는 검증 도구</p>
+    </header>
+
+    <main class="verification-main">
+      <section class="verification-intro" aria-labelledby="verification-title">
+        <p class="eyebrow">SUBMISSION CHECK</p>
+        <h1 id="verification-title">제출 전 검증 보고서</h1>
+        <p>현재 브라우저의 화면 크기, 가로 넘침, 페이지 오류와 마우스·키보드 상호작용을 확인합니다.</p>
+      </section>
+
+      <section class="verification-grid" aria-label="자동 검사 결과">
+        <article class="check-card" data-check="viewport"><p class="check-kicker">01 / VIEWPORT</p><h2>현재 해상도</h2><p id="viewport-value" class="check-value">확인 중</p><p id="viewport-detail" class="check-detail">창의 내부 크기를 읽습니다.</p></article>
+        <article class="check-card" data-check="overflow"><p class="check-kicker">02 / OVERFLOW</p><h2>가로 넘침</h2><p id="overflow-value" class="check-value">확인 중</p><p id="overflow-detail" class="check-detail">문서 폭과 화면 폭을 비교합니다.</p></article>
+        <article class="check-card" data-check="console"><p class="check-kicker">03 / CONSOLE</p><h2>페이지 오류</h2><p id="console-value" class="check-value">0건</p><p id="console-detail" class="check-detail">이 페이지에서 잡힌 오류를 셉니다.</p></article>
+      </section>
+
+      <section class="manual-check" aria-labelledby="interaction-title">
+        <div><p class="eyebrow">MOUSE + KEYBOARD</p><h2 id="interaction-title">상호작용 검사</h2><p>아래 버튼을 마우스로 한 번, Tab으로 이동한 뒤 Enter 또는 Space로 한 번 실행하세요. 실행할 때마다 상태가 즉시 바뀝니다.</p></div>
+        <div class="interaction-test"><button id="interaction-test-button" type="button" aria-pressed="false">검사 버튼 실행</button><p id="interaction-result" aria-live="polite">아직 실행하지 않았습니다.</p></div>
+      </section>
+
+      <section class="verification-steps" aria-labelledby="steps-title">
+        <div><p class="eyebrow">3 STEPS OR LESS</p><h2 id="steps-title">화면 파일 남기는 방법</h2></div>
+        <ol><li>브라우저 창을 1366×768 또는 1920×1080으로 맞춥니다.</li><li>이 페이지를 새로고침하고 모든 결과가 통과인지 확인합니다.</li><li>검증 결과와 포트폴리오 첫 화면을 각각 캡처합니다.</li></ol>
+        <p class="verification-note"><strong>안 될 때:</strong> 창 배율을 100%로 맞춘 뒤 다시 새로고침하세요. 오류가 계속되면 개발자 도구의 첫 번째 빨간 오류가 가리키는 파일과 줄을 확인하세요.</p>
+      </section>
+
+      <div class="evidence-actions"><a class="back-button" href="index.html">← 포트폴리오로 돌아가기</a><button id="rerun-checks" class="back-button secondary-button" type="button">자동 검사 다시 실행</button></div>
+    </main>
+    <script src="verify.js" defer></script>
+  </body>
+</html>
